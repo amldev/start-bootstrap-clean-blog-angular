@@ -14,10 +14,11 @@ import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PostComponent } from './pages/post/post.component';
+import { YoutubePipe } from './pipes/youtube.pipe';
+import { DomSecurePipe } from './pipes/dom-secure.pipe';
 
-@NgModule({
-  declarations: [
-    AppComponent,
+const COMPONENTS = [
+  AppComponent,
     FooterComponent,
     HeaderComponent,
     NavbarComponent,
@@ -28,7 +29,18 @@ import { PostComponent } from './pages/post/post.component';
     CoursesComponent,
     NotFoundComponent,
     PostComponent,
-    SidebarComponent,
+    SidebarComponent
+];
+
+const PIPES = [
+  YoutubePipe,
+  DomSecurePipe
+];
+
+@NgModule({
+  declarations: [
+    COMPONENTS,
+    PIPES
   ],
   imports: [
     BrowserModule,
