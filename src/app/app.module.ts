@@ -16,21 +16,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PostComponent } from './pages/post/post.component';
 import { YoutubePipe } from './pipes/youtube.pipe';
 import { DomSecurePipe } from './pipes/dom-secure.pipe';
-
-const COMPONENTS = [
-  AppComponent,
-    FooterComponent,
-    HeaderComponent,
-    NavbarComponent,
-    HomeComponent,
-    AboutComponent,
-    ContactComponent,
-    PortfolioComponent,
-    CoursesComponent,
-    NotFoundComponent,
-    PostComponent,
-    SidebarComponent
-];
+import { SharedModule } from './components/shared.module';
 
 const PIPES = [
   YoutubePipe,
@@ -39,12 +25,13 @@ const PIPES = [
 
 @NgModule({
   declarations: [
-    COMPONENTS,
+    AppComponent,
     PIPES
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

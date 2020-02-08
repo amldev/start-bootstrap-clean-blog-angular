@@ -1,16 +1,11 @@
-import { PostComponent } from './pages/post/post.component';
-import { ContactComponent } from './pages/contact/contact.component';
-import { PortfolioComponent } from './pages/portfolio/portfolio.component';
-import { AboutComponent } from './pages/about/about.component';
-import { HomeComponent } from './pages/home/home.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
 const APP_ROUTES: Routes = [
-    { path: 'home', component: HomeComponent},
-    { path: 'about', component: AboutComponent },
-    { path: 'post', component: PostComponent },
-    { path: 'portfolio', component: PortfolioComponent },
-    { path: 'contact', component: ContactComponent },
+    { path: 'home', loadChildren: './pages/home/home.module#HomeModule'},
+    { path: 'about', loadChildren: './pages/about/about.module#AboutModule' },
+    { path: 'post', loadChildren: './pages/post/post.module#PostModule' },
+    { path: 'portfolio', loadChildren: './pages/portfolio/portfolio.module#PortfolioModule' },
+    { path: 'contact', loadChildren: './pages/contact/contact.module#ContactModule' },
     { path: '**', pathMatch: 'full' , redirectTo: 'home' },
 ];
 
