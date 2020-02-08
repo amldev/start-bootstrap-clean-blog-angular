@@ -1,5 +1,5 @@
-import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
+import { RouterModule, Routes} from '@angular/router';
 const APP_ROUTES: Routes = [
     { path: 'home', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)},
     { path: 'about', loadChildren: () => import('./pages/about/about.module').then(m => m.AboutModule) },
