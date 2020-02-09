@@ -1,5 +1,4 @@
 import { Routes, RouterModule } from '@angular/router';
-import { ModuleWithProviders } from '@angular/compiler/src/core';
 const APP_ROUTES: Routes = [
     { path: 'home', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)},
     // { path: 'home', loadChildren: './pages/home/home.module#HomeModule'},
@@ -10,4 +9,4 @@ const APP_ROUTES: Routes = [
     { path: '**', pathMatch: 'full' , redirectTo: 'home' },
 ];
 
-export const AppRoutingModule: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES, { useHash: true});
+export const AppRoutingModule = RouterModule.forRoot(APP_ROUTES, { useHash: true});
